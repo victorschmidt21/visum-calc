@@ -1,15 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import aboutImg from "@assets/generated_images/professional_business_meeting_for_about_us_section.png";
 
 export default function About() {
-  const differentials = [
-    "Expertise Multidisciplinar: Contabilidade, Direito e Perícia integrados.",
-    "Nichos Complexos: Crédito rural, PGFN, Bolsa e Cripto.",
-    "Customização Total: Soluções desenhadas para sua realidade.",
-    "Visão de Futuro: Preservação de patrimônio e legado."
-  ];
-
   return (
     <section id="sobre" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
@@ -41,17 +33,6 @@ export default function About() {
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Atendemos advogados, empresários e investidores que não podem correr riscos quando o assunto é patrimônio e finanças.
             </p>
-
-            <ul className="space-y-4 mb-10">
-              {differentials.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <div className="mt-1 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3 text-green-700" />
-                  </div>
-                  <span className="text-gray-700 font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
 
             <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg rounded-full">
               Conheça Nossa História
