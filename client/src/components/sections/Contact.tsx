@@ -26,7 +26,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-primary text-lg">Telefone & WhatsApp</h4>
-                  <p className="text-gray-600 mt-1">(11) 99999-9999</p>
+                  <p className="text-gray-600 mt-1">(45) 99965-7206</p>
                   <p className="text-sm text-gray-500">Segunda a Sexta, 9h às 18h</p>
                 </div>
               </div>
@@ -48,8 +48,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-primary text-lg">Endereço</h4>
-                  <p className="text-gray-600 mt-1">Av. Paulista, 1000 - Bela Vista</p>
-                  <p className="text-gray-600">São Paulo - SP, 01310-100</p>
+                  <p className="text-gray-600 mt-1">Av. Parigot de Souza, 3302 - Jardim Santa Maria</p>
+                  <p className="text-gray-600">Toledo - PR, 85903-170</p>
                 </div>
               </div>
             </div>

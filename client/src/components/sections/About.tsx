@@ -16,10 +16,6 @@ export default function About() {
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
-              <p className="text-primary font-bold text-4xl mb-2">15+</p>
-              <p className="text-gray-600 font-medium text-sm">Anos combinados de experiência em casos de alta complexidade.</p>
-            </div>
           </div>
 
           <div className="order-1 lg:order-2">
