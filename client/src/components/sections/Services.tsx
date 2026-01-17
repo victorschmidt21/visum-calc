@@ -1,57 +1,45 @@
 import { 
   Calculator, 
   Scale, 
-  Landmark, 
-  Briefcase, 
-  TrendingUp, 
-  Building2, 
-  FileCheck, 
-  Users 
+  TrendingDown, 
+  Building, 
+  Gavel
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import abstractBg from "@assets/generated_images/abstract_financial_concept_for_services_section.png";
 
 const services = [
   {
-    icon: Landmark,
-    title: "Perícias Bancárias",
-    description: "Análise técnica de contratos bancários e crédito rural. Identificação de inconsistências, cláusulas abusivas e juros indevidos."
+    icon: TrendingDown,
+    title: "Reforma Tributária",
+    slug: "reforma-tributaria",
+    description: "Prepare sua empresa para o novo cenário fiscal brasileiro com análise detalhada dos impactos do IBS e CBS."
   },
   {
     icon: Calculator,
-    title: "Cálculos Trabalhistas",
-    description: "Segurança total na liquidação de verbas e processos. Cálculos precisos para instrução, contestação ou liquidação de sentença."
-  },
-  {
-    icon: TrendingUp,
-    title: "Capacidade de Pagamento",
-    description: "Pareceres técnicos (PF e PJ) e PGFN para negociações estratégicas e revisões de dívidas com base na realidade financeira."
+    title: "Contabilidade Personalizada",
+    slug: "contabilidade-personalizada",
+    description: "Gestão financeira estratégica com foco em compliance e tomada de decisões inteligentes para o seu negócio."
   },
   {
     icon: Scale,
-    title: "Liquidação de Sentença",
-    description: "Transformamos decisões judiciais em valores exatos, com aplicação correta de juros, correções e índices oficiais."
+    title: "Gestão Tributária",
+    slug: "gestao-tributaria",
+    description: "Otimização fiscal com redução de riscos e recuperação de créditos tributários de forma segura e eficiente."
   },
   {
-    icon: Building2,
-    title: "Recuperação Judicial",
-    description: "Da perícia prévia ao acompanhamento interno e gestão. Suporte completo para reestruturação sustentável de empresas."
+    icon: Building,
+    title: "Holding Patrimonial",
+    slug: "holding-patrimonial",
+    description: "Estruturação patrimonial focada em eficiência fiscal, proteção de ativos e planejamento sucessório familiar."
   },
   {
-    icon: Briefcase,
-    title: "Contabilidade Personalizada",
-    description: "Gestão financeira e planejamento tributário estratégico para empresas que buscam inteligência fiscal e compliance."
-  },
-  {
-    icon: FileCheck,
-    title: "IRPF para Investidores",
-    description: "Assessoria especializada para apuração e declaração de renda variável: bolsa de valores, criptomoedas e ativos internacionais."
-  },
-  {
-    icon: Users,
-    title: "Holding Familiar",
-    description: "Estruturação patrimonial com foco em sucessão e proteção. Preservação do legado familiar com segurança jurídica."
+    icon: Gavel,
+    title: "Cálculos Judiciais",
+    slug: "calculos-judiciais",
+    description: "Laudos técnicos e cálculos precisos para suporte em processos judiciais cíveis, trabalhistas e bancários."
   }
 ];
 
@@ -67,14 +55,14 @@ export default function Services() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-bold tracking-wider text-sm uppercase mb-2 block">Nossas Soluções</span>
           <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-6">
-            Soluções sob medida para cada desafio financeiro
+            Soluções completas para sua empresa
           </h2>
           <p className="text-lg text-gray-600">
-            Atuamos com rigor técnico e visão estratégica para entregar resultados que protegem seu patrimônio e garantem justiça financeira.
+            Inteligência contábil e pericial para decisões estratégicas e resultados sustentáveis.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-gray-100 hover:border-secondary/20 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-secondary transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -90,10 +78,12 @@ export default function Services() {
                 <CardDescription className="text-gray-600 leading-relaxed">
                   {service.description}
                 </CardDescription>
-                <Button variant="link" className="p-0 h-auto mt-4 text-secondary font-semibold group-hover:translate-x-1 transition-transform">
-                  Saiba mais <span className="ml-1">→</span>
+                <Button asChild variant="link" className="p-0 h-auto mt-4 text-secondary font-semibold group-hover:translate-x-1 transition-transform">
+                  <Link href={`/servicos/${service.slug}`}>
+                    Saiba mais <span className="ml-1">→</span>
+                  </Link>
                 </Button>
-              </CardContent>
+              </CardContent>Card
             </Card>
           ))}
         </div>
