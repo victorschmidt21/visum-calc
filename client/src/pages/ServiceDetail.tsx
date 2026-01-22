@@ -4,12 +4,18 @@ import { useParams, Link } from "wouter";
 import { Calculator, Scale, TrendingDown, Building, Gavel, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import generated images
+import serviceAccounting from "@/assets/images/service-accounting.png";
+import serviceTax from "@/assets/images/service-tax.png";
+import serviceHolding from "@/assets/images/service-holding.png";
+import serviceJustice from "@/assets/images/service-justice.png";
+
 const servicesData = {
   "reforma-tributaria": {
     title: "Reforma Tributária",
     subtitle: "NOVA LEI, NOVA REALIDADE",
     icon: TrendingDown,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+    image: serviceTax,
     description: "A Reforma Tributária tem como principal objetivo, a reestruturação do atual Sistema Tributário Nacional, simplificando a tributação nos âmbitos Federal, Estadual e Municipal, por meio de uma substituição progressiva de um robusto e complexo conjunto de normas, para que o valor dos produtos e serviços sejam reduzidos ao consumidor final.",
     sections: [
       {
@@ -26,7 +32,7 @@ const servicesData = {
     title: "Contabilidade Personalizada",
     subtitle: "GESTÃO ESTRATÉGICA E COMPLIANCE",
     icon: Calculator,
-    image: "https://images.unsplash.com/photo-1454165833767-02a698d1316a?auto=format&fit=crop&q=80&w=800",
+    image: serviceAccounting,
     description: "Gestão financeira e planejamento tributário estratégico para empresas que buscam inteligência fiscal e compliance. Análise, adequação e eficiência da gestão empresarial e controle interno para o desenvolvimento de estratégias personalizadas.",
     sections: [
       {
@@ -40,7 +46,7 @@ const servicesData = {
     title: "Gestão Tributária",
     subtitle: "OTIMIZAÇÃO E SEGURANÇA FISCAL",
     icon: Scale,
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+    image: serviceTax,
     description: "Implementação e execução das melhores estratégias tributárias com redução máxima de riscos e otimização de resultados. Equipe multidisciplinar que estuda a legislação, a contabilidade e o histórico fiscal de cada negócio.",
     items: ["Compliance Tributário", "Planejamento Tributário", "Assessoria Tributária", "Recuperação de Tributos", "Transferência de Créditos (ICMS)", "Assessoria em Notificações e Intimações", "Habilitação e Compensação de Créditos"]
   },
@@ -48,7 +54,7 @@ const servicesData = {
     title: "Holding Patrimonial",
     subtitle: "ESTRUTURAÇÃO E SUCESSÃO",
     icon: Building,
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    image: serviceHolding,
     description: "Atuamos de forma estratégica na estruturação e manutenção da holding, funcionando como um parceiro fundamental na proteção e gestão do patrimônio familiar e empresarial.",
     sections: [
       {
@@ -65,7 +71,7 @@ const servicesData = {
     title: "Cálculos Judiciais",
     subtitle: "EFICIÊNCIA EM CASOS COMPLEXOS",
     icon: Gavel,
-    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800",
+    image: serviceJustice,
     description: "Nossa perícia contábil destaca-se na abordagem de casos complexos, oferecendo eficiência excepcional ao lidar com nuances financeiras, econômicas e contábeis para suporte jurídico estratégico.",
     sections: [
       {
@@ -125,7 +131,7 @@ export default function ServiceDetail() {
             <div className="lg:col-span-8">
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-primary mb-6 font-heading">{service.subtitle}</h2>
-                <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl">
+                <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl bg-gray-100">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
