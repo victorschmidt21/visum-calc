@@ -42,14 +42,23 @@ const servicesData = {
     subtitle: "GESTÃO ESTRATÉGICA E COMPLIANCE",
     icon: Calculator,
     image: serviceAccounting,
-    description: "Gestão financeira e planejamento tributário estratégico para empresas que buscam inteligência fiscal e compliance. Análise, adequação e eficiência da gestão empresarial e controle interno para o desenvolvimento de estratégias personalizadas.",
+    description: "Gestão financeira e planejamento tributário estratégico para empresas que buscam inteligência fiscal e compliance. Valorizamos a transparência e a precisão dos documentos, bem como o cumprimento de todas as obrigações legais.",
     sections: [
+      {
+        title: "INTELIGÊNCIA FISCAL E TOMADA DE DECISÕES",
+        content: "Análise, adequação e eficiência da gestão empresarial e controle interno para o desenvolvimento de estratégias personalizadas que auxiliam nas tomadas de decisões."
+      },
       {
         title: "AUDITORIA E CONFERÊNCIA",
         content: "Compreende a auditoria independente contábil e a auditoria operacional. Esta área preza pela minuciosa conferência dos registros contábeis de nossos clientes, assegurando a conformidade e a veracidade dessas informações."
       }
     ],
-    items: ["BPO Financeiro", "Constituição e Regularização de Empresas", "Consultoria e Assessoria Contábil e/ou Tributária", "Recomposição Contábil e Tributária"]
+    items: [
+      "BPO Financeiro", 
+      "Constituição e Regularização de Empresas", 
+      "Consultoria e Assessoria Contábil e/ou Tributária", 
+      "Recomposição Contábil e Tributária"
+    ]
   },
   "gestao-tributaria": {
     title: "Gestão Tributária",
