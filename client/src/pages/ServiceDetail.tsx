@@ -72,15 +72,59 @@ const servicesData = {
     subtitle: "EFICIÊNCIA EM CASOS COMPLEXOS",
     icon: Gavel,
     image: serviceJustice,
-    description: "Nossa perícia contábil destaca-se na abordagem de casos complexos, oferecendo eficiência excepcional ao lidar com nuances financeiras, econômicas e contábeis para suporte jurídico estratégico.",
+    description: "Nossa perícia contábil destaca-se na abordagem de casos cíveis complexos, oferecendo uma eficiência excepcional ao lidar com nuances financeiras, econômicas e contábeis. Fornecemos relatórios especializados que transcendem os cálculos, oferecendo uma visão detalhada e estratégica para fortalecer sua defesa jurídica em processos na Justiça Estadual e Federal.",
     sections: [
       {
-        title: "CÁLCULOS BANCÁRIOS E CÍVEIS",
-        content: "Especialização em laudos revisionais, análise pré-ajuizamento, correção monetária, apuração de juros e execução de contratos."
+        title: "CONSULTORIA ESPECIALIZADA EM PERÍCIA JUDICIAL",
+        content: "Além dos serviços de cálculos, nossa equipe oferece consultoria especializada em perícia judicial, proporcionando orientações valiosas para a construção de estratégias robustas em casos cíveis."
       },
       {
-        title: "CÁLCULOS TRABALHISTAS",
-        content: "Segurança total e precisão para instrução, contestação ou liquidação de sentença. Apuração de folha de ponto, horas extras e encargos."
+        title: "Cálculos Bancários",
+        content: "Especialização em cálculos periciais para diversas operações, com análise detalhada para fortalecer sua posição antes ou durante o processo legal. Fornecemos suporte pericial integral, com cálculos detalhados para embasar estratégias legais em diversas operações e situações bancárias."
+      },
+      {
+        title: "Cálculos Cíveis",
+        content: "Nossa equipe oferece uma expertise especializada em cálculos cíveis, cobrindo uma variedade de casos que envolvem questões financeiras, econômicas e contábeis. Vamos além dos números, fornecendo uma análise detalhada que serve como suporte crucial para sua estratégia jurídica em processos na Justiça Estadual e Federal. Nosso enfoque exclusivo em perícia contábil judicial nos torna aptos a lidar com complexidades específicas de casos cíveis, proporcionando uma vantagem estratégica em sua defesa."
+      },
+      {
+        title: "Cálculos Trabalhistas",
+        content: "Conte com nossos especialistas em perícia para fornecer análises detalhadas, suporte em processos judiciais e expertise técnica em casos trabalhistas. Eliminamos a complexidade dos cálculos, garantindo precisão nas liquidações trabalhistas e proporcionando uma base sólida para suas argumentações jurídicas. Ao confiar na nossa perícia e serviços de cálculos, você tem mais tempo e energia para concentrar-se na defesa eficaz dos seus clientes. Segurança total e cálculos precisos para instrução, contestação ou liquidação de sentença."
+      },
+      {
+        title: "Cálculos de Falências e Recuperação Judicial",
+        content: "Atuamos na análise de viabilidade e suporte técnico em processos de falência e recuperação judicial, gerando transparência e credibilidade ao processo, identificando a crise com análises financeiras e patrimoniais, auxiliando na elaboração e execução do plano de reestruturação, e fornecendo os cálculos e relatórios precisos para a viabilidade da empresa ou o pagamento de dívidas, sendo fundamental para a tomada de decisões estratégicas e legais."
+      }
+    ],
+    subItems: [
+      {
+        category: "CÁLCULOS BANCÁRIOS",
+        list: [
+          "Laudo Revisional de Operações de Crédito Bancário e Crédito Rural",
+          "Análise detalhada pré-ajuizamento para fortalecer sua posição antes do processo legal para Ação Revisional de Conta Corrente",
+          "Parecer de Capacidade de Pagamento (Lei do Superendividamento)",
+          "Parecer e Cálculo de Liquidação de Sentença"
+        ]
+      },
+      {
+        category: "CÁLCULOS CÍVEIS",
+        list: [
+          "Correção monetária e apuração de juros moratórios",
+          "Cálculos de execução de contratos firmados entre terceiros",
+          "Cálculo revisional do FGTS",
+          "Revisão do PASEP"
+        ]
+      },
+      {
+        category: "CÁLCULOS TRABALHISTAS",
+        list: [
+          "Cálculos de inicial e liquidação de sentença",
+          "Laudo para fins de impugnação",
+          "Apuração de folha de ponto, horas extras e verbas em geral",
+          "Apuração de Imposto de Renda, INSS e FGTS",
+          "Cálculo de rescisão de contrato de trabalho",
+          "Assistência em Perícia Trabalhista",
+          "Cálculos para Acordo"
+        ]
       }
     ]
   }
@@ -151,7 +195,7 @@ export default function ServiceDetail() {
               ))}
 
               {service.items && (
-                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-8">
                   <h3 className="text-xl font-bold text-primary mb-6 font-heading">
                     SERVIÇOS EM {service.title.toUpperCase()}
                   </h3>
@@ -165,6 +209,22 @@ export default function ServiceDetail() {
                   </div>
                 </div>
               )}
+
+              {service.subItems && service.subItems.map((sub, sIdx) => (
+                <div key={sIdx} className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-8">
+                  <h3 className="text-xl font-bold text-primary mb-6 font-heading">
+                    {sub.category}
+                  </h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {sub.list.map((item, lIdx) => (
+                      <div key={lIdx} className="flex items-start gap-3">
+                        <CheckCircle2 className="text-secondary shrink-0 mt-1" size={18} />
+                        <span className="text-gray-700 font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
 
               <div className="mt-12">
                 <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold h-14 px-8 rounded-lg shadow-lg shadow-secondary/20">
