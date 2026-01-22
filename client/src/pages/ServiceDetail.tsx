@@ -20,12 +20,21 @@ const servicesData = {
     sections: [
       {
         title: "PRODUTOR RURAL E A REFORMA TRIBUTÁRIA",
-        content: "A Lei Complementar Nº 214 DE 16/01/2025 que institui o IBS e a CBS trouxe regras específicas para o tratamento tributário aplicável ao produtor rural, reconhecendo as particularidades do setor agropecuário. O setor agrário será diretamente impactado pela nova regulamentação, exigindo um mapeamento detalhado e antecipado dos impactos nas suas operações."
+        content: "A Lei Complementar Nº 214 DE 16/01/2025 que institui o IBS e a CBS trouxe regras específicas para o tratamento tributário aplicável ao produtor rural, reconhecendo as particularidades do setor agropecuário. O setor agrário será diretamente impactado pela nova regulamentação, exigindo um mapeamento detalhado e antecipado dos impactos nas suas operações. A unificação de tributos e a possível revisão de regimes especiais podem gerar tanto oportunidades quanto riscos."
       },
       {
         title: "TRANSIÇÃO DA REFORMA TRIBUTÁRIA",
-        content: "Após um período de testes que se inicia em 2026, a reforma já impactará significativamente as empresas em 2027, tendo sua implantação completa em 2033. O planejamento antecipado é essencial para identificar impactos financeiros e ajustar cadeias de fornecimento."
+        content: "Após um período de testes que se inicia em 2026, a reforma já impactará significativamente as empresas em 2027, tendo sua implantação completa em 2033. Nesse contexto, o planejamento antecipado é essencial. Identificar os impactos financeiros, ajustar cadeias de fornecimento, bem como rever a política comercial são passos fundamentais para mitigar riscos e aproveitar benefícios."
+      },
+      {
+        title: " SUSTENTABILIDADE E PREPARAÇÃO",
+        content: "É tempo de as empresas do setor iniciarem as preparações para as mudanças, fortalecendo sua posição no mercado e garantindo sustentabilidade no longo prazo. Temos um plano personalizado que pode ser adaptado conforme a complexidade das operações e a regulamentação da Reforma Tributária em curso."
       }
+    ],
+    timeline: [
+      { year: "2026", desc: "Início do período de testes" },
+      { year: "2027", desc: "Início do impacto real nas empresas" },
+      { year: "2033", desc: "Implantação completa do novo sistema" }
     ]
   },
   "contabilidade-personalizada": {
@@ -230,6 +239,25 @@ export default function ServiceDetail() {
                   </p>
                 </div>
               ))}
+
+              {service.timeline && (
+                <div className="mb-12 py-10 bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                  <h3 className="text-xl font-bold text-primary mb-8 font-heading text-center uppercase tracking-wide">Linha do Tempo da Transição</h3>
+                  <div className="relative">
+                    <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden md:block" />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                      {service.timeline.map((item, i) => (
+                        <div key={i} className="text-center group">
+                          <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4 border-4 border-white shadow-xl group-hover:scale-110 transition-transform">
+                            {item.year}
+                          </div>
+                          <p className="text-gray-700 font-bold text-sm">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {service.items && (
                 <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-8">
