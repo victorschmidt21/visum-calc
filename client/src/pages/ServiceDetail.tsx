@@ -47,8 +47,22 @@ const servicesData = {
     subtitle: "OTIMIZAÇÃO E SEGURANÇA FISCAL",
     icon: Scale,
     image: serviceTax,
-    description: "Implementação e execução das melhores estratégias tributárias com redução máxima de riscos e otimização de resultados. Equipe multidisciplinar que estuda a legislação, a contabilidade e o histórico fiscal de cada negócio.",
-    items: ["Compliance Tributário", "Planejamento Tributário", "Assessoria Tributária", "Recuperação de Tributos", "Transferência de Créditos (ICMS)", "Assessoria em Notificações e Intimações", "Habilitação e Compensação de Créditos"]
+    description: "Implementação e execução das melhores estratégias tributárias com redução máxima de riscos e otimização de resultados. Com uma equipe multidisciplinar, que estuda a legislação, a contabilidade e o histórico fiscal de cada negócio, prestamos assessoria e consultoria tributária aos clientes, garantindo a conformidade legal e otimizando a carga tributária das organizações.",
+    sections: [
+      {
+        title: "ESTRATÉGIA MULTIDISCIPLINAR",
+        content: "Nossa equipe analisa profundamente a legislação e o histórico fiscal para entregar soluções que vão além do básico, focando na real economia tributária e segurança jurídica."
+      }
+    ],
+    items: [
+      "Compliance Tributário",
+      "Planejamento Tributário",
+      "Assessoria Tributária",
+      "Recuperação de Tributos",
+      "Transferência de Créditos (ICMS)",
+      "Assessoria em Notificações e Intimações Administrativas",
+      "Habilitação, Compensação, Restituição e Acompanhamento de Créditos"
+    ]
   },
   "holding-patrimonial": {
     title: "Holding Patrimonial",
