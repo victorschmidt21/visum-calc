@@ -52,18 +52,41 @@ const servicesData = {
   },
   "holding-patrimonial": {
     title: "Holding Patrimonial",
-    subtitle: "ESTRUTURAÇÃO E SUCESSÃO",
+    subtitle: "ESTRUTURAÇÃO E MANUTENÇÃO ESTRATÉGICA",
     icon: Building,
     image: serviceHolding,
-    description: "Atuamos de forma estratégica na estruturação e manutenção da holding, funcionando como um parceiro fundamental na proteção e gestão do patrimônio familiar e empresarial.",
+    description: "Atuamos de forma estratégica, focando na melhor estratégia para atender sua necessidade, funcionando como um parceiro fundamental junto ao advogado na estruturação e manutenção da holding.",
     sections: [
       {
-        title: "PLANEJAMENTO E REGULARIZAÇÃO",
-        content: "Análise do regime tributário mais vantajoso, definição da estrutura societária ideal e integralização de bens ao capital social com foco em minimizar custos fiscais."
+        title: "Planejamento Tributário e Societário",
+        content: "Análise do regime tributário mais vantajoso (Lucro Presumido/Real), definição da estrutura societária ideal (tipo de holding) e orientação técnica para minimizar custos fiscais e riscos legais."
       },
       {
-        title: "SUPORTE ESTRATÉGICO",
-        content: "Base técnica para decisões administrativas e sucessórias, auxílio na gestão de dividendos e governança familiar em parceria com advogados."
+        title: "Constituição e Regularização",
+        content: "Abertura de CNPJ e registro da holding, integralização de bens ao capital social e organização completa da documentação contábil e fiscal."
+      },
+      {
+        title: "Gestão Contábil e Financeira",
+        content: "Escrituração de todos os movimentos financeiros e patrimoniais, elaboração de balanços, demonstrações financeiras (DRE, DFC) e apuração rigorosa de impostos (IRPJ, CSLL)."
+      },
+      {
+        title: "Obrigações Acessórias e Conformidade",
+        content: "Envio de declarações ao Fisco (ECD, ECF, DCTF), controle de certidões negativas de débitos e garantia total da regularidade fiscal da empresa."
+      },
+      {
+        title: "Suporte Estratégico e Sucessório",
+        content: "Análise de riscos e oportunidades, base técnica para decisões sucessórias, gestão de dividendos e parceria com advogados para governança familiar."
+      }
+    ],
+    subItems: [
+      {
+        category: "Destaques do Planejamento",
+        list: [
+          "Análise de regime tributário (Lucro Presumido vs Real)",
+          "Integralização de bens ao capital social",
+          "Emissão de relatórios de lucros e dividendos",
+          "Planejamento sucessório e governança familiar"
+        ]
       }
     ]
   },
