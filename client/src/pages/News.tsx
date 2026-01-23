@@ -16,6 +16,7 @@ import {
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
+import { MetaHead } from "@/components/seo/MetaHead";
 
 interface NewsItem {
   id: string;
@@ -102,6 +103,10 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-white">
+      <MetaHead 
+        title="Notícias e Agenda Tributária" 
+        description="Fique por dentro das últimas notícias fiscais e da agenda tributária completa."
+      />
       <Navbar />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">

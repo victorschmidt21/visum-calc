@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://visumcalc.com.br/sitemap.xml

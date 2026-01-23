@@ -10,7 +10,34 @@ import serviceTax from "@/assets/images/service-tax.png";
 import serviceHolding from "@/assets/images/service-holding.png";
 import serviceJustice from "@/assets/images/service-justice.png";
 
-const servicesData = {
+interface ServiceSection {
+  title: string;
+  content: string;
+}
+
+interface ServiceTimelineItem {
+  year: string;
+  desc: string;
+}
+
+interface ServiceSubItem {
+  category: string;
+  list: string[];
+}
+
+interface ServiceData {
+  title: string;
+  subtitle: string;
+  icon: any;
+  image: string;
+  description: string;
+  sections: ServiceSection[];
+  timeline?: ServiceTimelineItem[];
+  items?: string[];
+  subItems?: ServiceSubItem[];
+}
+
+const servicesData: Record<string, ServiceData> = {
   "reforma-tributaria": {
     title: "Reforma Tributária",
     subtitle: "NOVA LEI, NOVA REALIDADE",
@@ -193,6 +220,8 @@ const otherServices = [
   { title: "Recursos Financeiros", slug: "contabilidade-personalizada" }
 ];
 
+import { MetaHead } from "@/components/seo/MetaHead";
+
 export default function ServiceDetail() {
   const { id } = useParams();
   const service = servicesData[id as keyof typeof servicesData];
@@ -201,6 +230,11 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-white">
+      <MetaHead 
+        title={service.title} 
+        description={service.description}
+        image={service.image} 
+      />
       <Navbar />
       
       {/* Hero Section Page Title */}

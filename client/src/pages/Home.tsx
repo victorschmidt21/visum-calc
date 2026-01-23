@@ -8,10 +8,15 @@ import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { MetaHead } from "@/components/seo/MetaHead";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <MetaHead 
+        title="Precisão Contábil e Pericial" 
+        description="Na Visum Calc, unimos expertise contábil, jurídica e pericial para transformar complexidade em clareza."
+      />
       <Navbar />
       <main>
         <Hero />
