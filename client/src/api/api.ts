@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const LEGISWEB_TOKEN = "8940330006972b22c5bdec0.40154555";
-const LEGISWEB_DOMAIN = "186.226.50.64";
+const LEGISWEB_TOKEN = import.meta.env.VITE_LEGISWEB_TOKEN || "8940330006972b22c5bdec0.40154555";
+const LEGISWEB_DOMAIN = import.meta.env.VITE_LEGISWEB_DOMAIN || "186.226.50.64";
 
 export async function fetchLegisWebNews() {
   const formData = new URLSearchParams();
