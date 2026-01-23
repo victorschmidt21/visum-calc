@@ -38,3 +38,11 @@ export async function fetchLegisWebAgenda(mes: string | number, ano: string | nu
   );
   return response.data;
 }
+
+export async function sendContactForm(data: any) {
+  const response = await axios.post(
+    "https://n8n.voriumcompany.com.br/webhook/contact",
+    data
+  );
+  return response.data;
+}

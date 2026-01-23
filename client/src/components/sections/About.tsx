@@ -30,9 +30,11 @@ export default function About() {
               Atendemos advogados, empresários e investidores que não podem correr riscos quando o assunto é patrimônio e finanças.
             </p>
 
-            <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg rounded-full">
+            <Button size="lg" 
+              variant="outline"  className="bg-primary hover:bg-primary/90 border-white/30 text-white font-medium text-lg h-14 px-8 rounded-full backdrop-blur-sm cursor-pointer">
               Conheça Nossa História
             </Button>
+
           </div>
         </div>
       </div>

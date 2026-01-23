@@ -47,7 +47,7 @@ export default function Differentials() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary font-bold tracking-wider text-sm uppercase mb-2 block">Por que escolher a Visum Calc?</span>
+          <span className="text-secondary font-bold tracking-wider text-md uppercase mb-2 block">Por que escolher a Visum Calc?</span>
           <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6">
             Diferenciais Visum Calc
           </h2>
@@ -60,7 +60,7 @@ export default function Differentials() {
           {differentials.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-colors group"
+              className="bg-white/10 border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-colors group"
             >
               <div className="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                 <item.icon className="w-7 h-7 text-secondary group-hover:text-white transition-colors" />

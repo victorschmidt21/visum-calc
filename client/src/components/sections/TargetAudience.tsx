@@ -47,7 +47,7 @@ export default function TargetAudience() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-secondary font-bold tracking-wider text-sm uppercase mb-2 block">Quem Atendemos</span>
+            <span className="text-secondary font-bold tracking-wider text-md uppercase mb-2 block">Quem Atendemos</span>
             <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary">
               Parceiros estratégicos para o seu sucesso
             </h2>

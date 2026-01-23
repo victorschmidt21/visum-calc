@@ -10,6 +10,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import logo from "../../../public/logo.png";
+import logo2 from "../../../public/logo2.png";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -49,35 +52,29 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 bg-primary rounded-lg text-white font-bold text-xl group-hover:bg-primary/90 transition-colors">
-              V
-            </div>
-            <div className="flex flex-col">
-              <span className={cn("text-xl font-heading font-bold leading-none tracking-tight", scrolled || !isHome ? "text-primary" : "text-white")}>
-                Visum Calc
-              </span>
-              <span className={cn("text-[10px] uppercase tracking-widest font-medium", scrolled || !isHome ? "text-primary/70" : "text-white/80")}>
-                Perícia & Cálculos
-              </span>
-            </div>
+            {scrolled || !isHome ? (
+              <img src={logo2} alt="Logo" width={200} height={100} />
+            ) : (
+              <img src={logo} alt="Logo" width={200} height={100} />
+            )}
           </a>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 ">
           <Link href="/">
-            <a className={cn("text-sm font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Home</a>
+            <a className={cn("text-lg font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Home</a>
           </Link>
 
           <DropdownMenu>
-            <DropdownMenuTrigger className={cn("text-sm font-medium transition-colors hover:text-secondary flex items-center gap-1 outline-none", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>
+            <DropdownMenuTrigger className={cn("text-lg font-medium transition-colors hover:text-secondary flex items-center gap-1 outline-none", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>
               Serviços <ChevronDown size={14} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-56">
+            <DropdownMenuContent align="start">
               {services.map((service) => (
-                <DropdownMenuItem key={service.href} asChild>
+                <DropdownMenuItem key={service.href} asChild className="cursor-pointer">
                   <Link href={service.href}>
-                    <a className="w-full cursor-pointer">{service.name}</a>
+                    <a className="w-full cursor-pointer font-medium">{service.name}</a>
                   </Link>
                 </DropdownMenuItem>
               ))}
@@ -85,15 +82,15 @@ export default function Navbar() {
           </DropdownMenu>
 
           <Link href="/noticias">
-            <a className={cn("text-sm font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Notícias</a>
+            <a className={cn("text-lg font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Notícias</a>
           </Link>
 
           <Link href="/contato">
-            <a className={cn("text-sm font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Contato</a>
+            <a className={cn("text-lg font-medium transition-colors hover:text-secondary", scrolled || !isHome ? "text-gray-700" : "text-white/90")}>Contato</a>
           </Link>
 
           <Button 
-            className="bg-secondary hover:bg-secondary/90 text-white font-semibold shadow-lg shadow-secondary/20"
+            className="text-lg bg-secondary hover:bg-secondary/90 text-white font-semibold"
             size="sm"
             asChild
           >

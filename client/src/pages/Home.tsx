@@ -7,6 +7,7 @@ import TargetAudience from "@/components/sections/TargetAudience";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <section id="reforma" className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <span className="text-secondary font-bold tracking-wider text-sm uppercase mb-2 block">Destaque Estratégico</span>
+              <span className="text-secondary font-bold tracking-wider text-md uppercase mb-2 block">Destaque Estratégico</span>
               <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-6">Reforma Tributária: Prepare sua empresa para 2027</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 A Reforma Tributária (LC 214/2025) unifica tributos federais, estaduais e municipais no IBS e CBS. 
@@ -35,9 +36,9 @@ export default function Home() {
                   { year: "2027-2032", desc: "Transição gradual" },
                   { year: "2033", desc: "Implantação completa" }
                 ].map((item, i) => (
-                  <div key={i} className="text-center">
-                    <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4 border-4 border-white shadow-lg relative">
-                      <span className="absolute -top-10 text-secondary text-lg font-bold">{item.year}</span>
+                  <div key={i} className="text-center flex flex-col items-center hover:scale-105 transition-all">
+                      <span className="text-secondary text-lg font-bold">{item.year}</span>
+                    <div className="w-12 h-12 bg-secondary rounded-full   flex items-center justify-center text-white font-bold mx-auto mb-4 border-4 border-white shadow-lg relative">
                     </div>
                     <p className="text-gray-600 font-medium">{item.desc}</p>
                   </div>
@@ -55,9 +56,9 @@ export default function Home() {
                     A unificação tributária pode representar tanto oportunidades quanto riscos. 
                     Mapeie os impactos antes que eles cheguem.
                   </p>
-                  <button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
+                  <Button size="default" className="bg-secondary cursor-pointer hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
                     Solicitar diagnóstico gratuito
-                  </button>
+                  </Button>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                   <h4 className="font-bold mb-4 flex items-center gap-2 text-secondary">
@@ -86,9 +87,9 @@ export default function Home() {
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Nossa equipe multidisciplinar está pronta para transformar a complexidade dos seus dados em estratégias claras.
             </p>
-            <button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-10 rounded-full shadow-xl shadow-secondary/20 transition-transform hover:scale-105">
+            <Button className="cursor-pointer bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-10 rounded-full transition-transform">
               Falar com Especialista Agora
-            </button>
+            </Button>
           </div>
         </div>
         <Testimonials />
