@@ -52,6 +52,7 @@ interface LegisWebNews {
   resumo?: string;
   imagem?: string;
   url?: string;
+  assunto?: string;
 }
 
 const servicesData: Record<string, ServiceData> = {
@@ -449,21 +450,11 @@ export default function ServiceDetail() {
                           href={newsItem.url || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex gap-4 group cursor-pointer"
+                          className="flex gap-4 group cursor-pointer bg-white border border-gray-100 hover:shadow-md rounded-2xl p-4"
                         >
-                          <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img
-                              src={
-                                newsItem.imagem ||
-                                `https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=200`
-                              }
-                              alt={newsItem.titulo}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                          </div>
-                          <div>
+                          <div className="space-y-4">
                             <span className="text-[10px] text-gray-400 font-bold uppercase block mb-1">
-                              {newsItem.data || "N/A"}
+                              {newsItem.assunto || "N/A"}
                             </span>
                             <h4 className="text-sm font-bold text-primary group-hover:text-secondary transition-colors line-clamp-2">
                               {newsItem.titulo || "Título não disponível"}

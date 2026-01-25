@@ -34,7 +34,7 @@ export default function News() {
   const [agendaCurrent, setAgendaCurrent] = useState<Date[]>([]);
   const [loadingAgenda, setLoadingAgenda] = useState(true);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 12;
 
   const today = new Date();
   const pastMonth = subMonths(today, 1);
@@ -252,12 +252,20 @@ export default function News() {
                          />
                       </PaginationItem>
                       
-                      {/* Show simplified pagination: 1 ... Current ... Total */}
-                      {/* Or just Previous / Next for simplicity as requested "paginação de 10 cada" */}
-                      
-                       <PaginationItem>
-                        <PaginationLink href="#" isActive>{page}</PaginationLink>
-                      </PaginationItem>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                        <PaginationItem key={pageNum}>
+                          <PaginationLink
+                            href="#"
+                            isActive={page === pageNum}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handlePageChange(pageNum);
+                            }}
+                          >
+                            {pageNum}
+                          </PaginationLink>
+                        </PaginationItem>
+                      ))}
 
                       <PaginationItem>
                         <PaginationNext 
