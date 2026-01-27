@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { fetchLegisWebNews } from "@/api/api";
+import { Skeleton } from "@/components/ui/skeleton";
 
 // Import generated images
 import serviceAccounting from "@/assets/images/service-accounting.png";
@@ -440,16 +441,25 @@ export default function ServiceDetail() {
                   </h3>
                   <div className="space-y-6">
                     {newsLoading ? (
-                      <div className="text-gray-400 text-sm">
-                        Carregando notícias...
-                      </div>
+                      Array.from({ length: 3 }).map((_, i) => (
+                        <div
+                          key={i}
+                          className="bg-white border border-gray-100 rounded-2xl p-4 flex gap-4"
+                        >
+                          <div className="space-y-4 w-full">
+                            <Skeleton className="h-3 w-12" />
+                            <div className="space-y-2">
+                              <Skeleton className="h-4 w-full" />
+                              <Skeleton className="h-4 w-3/4" />
+                            </div>
+                          </div>
+                        </div>
+                      ))
                     ) : news.length > 0 ? (
                       news.map((newsItem, i) => (
-                        <a
+                        <Link
                           key={i}
-                          href={newsItem.url || "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          to="/noticias"
                           className="flex gap-4 group cursor-pointer bg-white border border-gray-100 hover:shadow-md rounded-2xl p-4"
                         >
                           <div className="space-y-4">
@@ -460,7 +470,7 @@ export default function ServiceDetail() {
                               {newsItem.titulo || "Título não disponível"}
                             </h4>
                           </div>
-                        </a>
+                        </Link>
                       ))
                     ) : (
                       <div className="text-gray-400 text-sm">

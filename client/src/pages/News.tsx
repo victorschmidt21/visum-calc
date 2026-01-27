@@ -3,7 +3,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { format, subMonths } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { Calendar } from "@/components/ui/calendar";
 import { fetchLegisWebNews, fetchLegisWebAgenda } from "@/api/api";
 import {
   Pagination,
@@ -17,6 +16,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { MetaHead } from "@/components/seo/MetaHead";
+import { AccountantCalendar } from "@/components/calendar/AccountantCalendar";
 
 interface NewsItem {
   id: string;
@@ -30,8 +30,6 @@ interface NewsItem {
 export default function News() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loadingNews, setLoadingNews] = useState(true);
-  const [agendaPast, setAgendaPast] = useState<Date[]>([]);
-  const [agendaCurrent, setAgendaCurrent] = useState<Date[]>([]);
   const [loadingAgenda, setLoadingAgenda] = useState(true);
   const [page, setPage] = useState(1);
   const itemsPerPage = 12;
@@ -43,15 +41,13 @@ export default function News() {
     const fetchNews = async () => {
       try {
         const data = await fetchLegisWebNews();
-        // LegisWeb likely returns an array directly or { result: [] }
-        // Assuming array based on prompt description
         if (Array.isArray(data)) {
           setNews(data);
         } else if (Array.isArray(data?.result)) {
            setNews(data.result);
         } else {
            console.warn("Unexpected news format:", data);
-           setNews([]); // Fallback
+           setNews([]); 
         }
       } catch (error) {
         console.error("Failed to fetch news", error);
@@ -60,34 +56,7 @@ export default function News() {
       }
     };
 
-    const fetchAgenda = async (date: Date): Promise<Date[]> => {
-      try {
-        const mes = date.getMonth() + 1;
-        const ano = date.getFullYear();
-        const data = await fetchLegisWebAgenda(mes, ano);
-        // Assuming data is array of day numbers like ["1", "5"]
-        // or numbers [1, 5]
-        if (Array.isArray(data)) {
-          return data.map((d: string | number) => new Date(ano, mes - 1, Number(d)));
-        }
-      } catch (error) {
-        console.error("Failed to fetch agenda", error);
-      }
-      return [];
-    };
-
-    const loadAgendas = async () => {
-      const [past, current] = await Promise.all([
-        fetchAgenda(pastMonth),
-        fetchAgenda(today),
-      ]);
-      setAgendaPast(past);
-      setAgendaCurrent(current);
-      setLoadingAgenda(false);
-    };
-
     fetchNews();
-    loadAgendas();
   }, []);
 
   // Pagination Logic
@@ -117,64 +86,32 @@ export default function News() {
               Agenda Tributária
             </h1>
             <div className="flex flex-col md:flex-row justify-center gap-12 items-start">
-              
+
               {/* Past Month */}
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-semibold mb-4 text-gray-600 capitalize">
                   {format(pastMonth, "MMMM yyyy", { locale: ptBR })}
                 </h3>
-                {loadingAgenda ? (
-                   <Skeleton className="w-[300px] h-[300px] rounded-md" />
-                ) : (
-                  <Calendar
-                    mode="single"
-                    month={pastMonth}
-                    disableNavigation
-                    modifiers={{
-                      booked: agendaPast,
-                    }}
-                    modifiersStyles={{
-                      booked: {
-                        color: "white",
-                        backgroundColor: "var(--primary)", // Use theme color
-                        fontWeight: "bold",
-                        borderRadius: "100%",
-                      },
-                    }}
-                    className="rounded-md border shadow p-4"
-                    locale={ptBR}
-                  />
-                )}
+                <AccountantCalendar
+                month={pastMonth.getMonth() + 1}
+                year={pastMonth.getFullYear()}
+                />
               </div>
 
               {/* Current Month */}
               <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary capitalize">
-                  {format(today, "MMMM yyyy", { locale: ptBR })}
-                </h3>
-                 {loadingAgenda ? (
-                   <Skeleton className="w-[300px] h-[300px] rounded-md" />
-                ) : (
-                  <Calendar
-                    mode="single"
-                    month={today}
-                    disableNavigation
-                    modifiers={{
-                      booked: agendaCurrent,
-                    }}
-                     modifiersStyles={{
-                      booked: {
-                        color: "white",
-                        backgroundColor: "#E11D48", // Use secondary/red color
-                         fontWeight: "bold",
-                        borderRadius: "100%",
-                      },
-                    }}
-                    className="rounded-md border shadow p-4"
-                    locale={ptBR}
+                <div className="flex items-center gap-2 mb-4">
+                     <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                     <h3 className="text-xl font-semibold text-primary capitalize">
+                        {format(today, "MMMM yyyy", { locale: ptBR })}
+                     </h3>
+                </div>
+                  <AccountantCalendar
+                  month={today.getMonth() + 1}
+                  year={today.getFullYear()}
                   />
-                )}
               </div>
+
             </div>
           </section>
 
