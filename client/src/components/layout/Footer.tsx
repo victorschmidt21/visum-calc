@@ -1,4 +1,4 @@
-import { Calculator, Mail, MapPin, Phone, MessageCircle, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Calculator, Mail, MapPin, Phone, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import logo from "../../../public/logo.png";
@@ -17,21 +17,14 @@ export default function Footer() {
               e perícias.
             </p>
             <div className="flex gap-4">
-              {/* Social placeholders */}
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer">
+              <a href="https://www.linkedin.com/company/visum-calc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin />
-              </div>
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer">
+              </a>
+              <a href="https://www.instagram.com/visumcalc?igsh=eWNhM3BzazE1YzBi" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer">
                 <span className="sr-only">Instagram</span>
                 <Instagram />
-              </div>
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer">
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-                
-              </div>
-              
+              </a>
             </div>
           </div>
 
