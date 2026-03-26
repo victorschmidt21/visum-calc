@@ -30,16 +30,18 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-secondary hover:bg-secondary/90 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-secondary/25 transition-all cursor-pointer "
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Fale com um Especialista
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="bg-transparent hover:border-secondary border-white/30 text-white hover:bg-white/10 font-medium text-lg h-14 px-8 rounded-full backdrop-blur-sm cursor-pointer"
+              onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Conheça Nossos Serviços
             </Button>

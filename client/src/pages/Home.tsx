@@ -61,7 +61,7 @@ export default function Home() {
                     A unificação tributária pode representar tanto oportunidades quanto riscos. 
                     Mapeie os impactos antes que eles cheguem.
                   </p>
-                  <Button size="default" className="bg-secondary cursor-pointer hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
+                  <Button size="default" className="bg-secondary cursor-pointer hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105" onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}>
                     Solicitar diagnóstico gratuito
                   </Button>
                 </div>
@@ -92,7 +92,7 @@ export default function Home() {
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Nossa equipe multidisciplinar está pronta para transformar a complexidade dos seus dados em estratégias claras.
             </p>
-            <Button className="cursor-pointer bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-10 rounded-full transition-transform">
+            <Button className="cursor-pointer bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-10 rounded-full transition-transform" onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}>
               Falar com Especialista Agora
             </Button>
           </div>
