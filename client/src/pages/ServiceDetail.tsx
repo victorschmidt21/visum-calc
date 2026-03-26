@@ -425,7 +425,7 @@ export default function ServiceDetail() {
                 ))}
 
               <div className="mt-12">
-                <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold h-14 px-8 rounded-lg shadow-lg shadow-secondary/20">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold h-14 px-8 rounded-lg shadow-lg shadow-secondary/20" onClick={() => { window.location.href = '/#contato'; }}>
                   Mais informações
                 </Button>
               </div>
