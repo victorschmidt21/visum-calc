@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import aboutImg from "@assets/generated_images/professional_business_meeting_for_about_us_section.png";
+import { scrollToSection } from "@/lib/utils";
 
 export default function About() {
   return (
@@ -32,7 +33,7 @@ export default function About() {
 
             <Button size="lg"
               variant="outline" className="bg-primary hover:bg-primary/90 border-white/30 text-white font-medium text-lg h-14 px-8 rounded-full backdrop-blur-sm cursor-pointer"
-              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}>
+              onClick={() => scrollToSection('contato')}>
               Conheça Nossa História
             </Button>
 

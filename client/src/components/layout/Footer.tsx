@@ -1,9 +1,20 @@
 import { Calculator, Mail, MapPin, Phone, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import logo from "../../../public/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
+import { scrollToSection } from "@/lib/utils";
+
 export default function Footer() {
+  const [location, navigate] = useLocation();
+
+  function handleNavClick(id: string) {
+    if (location === "/") {
+      scrollToSection(id);
+    } else {
+      navigate(`/#${id}`);
+    }
+  }
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
@@ -40,28 +51,28 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/#sobre"
-                  className="hover:text-secondary transition-colors"
+                <button
+                  onClick={() => handleNavClick("sobre")}
+                  className="hover:text-secondary transition-colors cursor-pointer"
                 >
                   Quem Somos
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/#servicos"
-                  className="hover:text-secondary transition-colors"
+                <button
+                  onClick={() => handleNavClick("servicos")}
+                  className="hover:text-secondary transition-colors cursor-pointer"
                 >
                   Nossos Serviços
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="/#clientes"
-                  className="hover:text-secondary transition-colors"
+                <button
+                  onClick={() => handleNavClick("clientes")}
+                  className="hover:text-secondary transition-colors cursor-pointer"
                 >
                   Quem Atendemos
-                </a>
+                </button>
               </li>
             </ul>
           </div>

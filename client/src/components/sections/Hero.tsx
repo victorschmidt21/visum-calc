@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import heroBg from "@assets/generated_images/modern_corporate_office_hero_background_with_dark_green_and_gold_accents.png";
+import { scrollToSection } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -33,7 +34,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-secondary hover:bg-secondary/90 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-secondary/25 transition-all cursor-pointer "
-              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contato')}
             >
               Fale com um Especialista
             </Button>
@@ -41,7 +42,7 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="bg-transparent hover:border-secondary border-white/30 text-white hover:bg-white/10 font-medium text-lg h-14 px-8 rounded-full backdrop-blur-sm cursor-pointer"
-              onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('servicos')}
             >
               Conheça Nossos Serviços
             </Button>
