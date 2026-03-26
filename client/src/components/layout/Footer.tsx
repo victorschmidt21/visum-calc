@@ -120,7 +120,7 @@ export default function Footer() {
                 <span>contato@visumcalc.com.br</span>
               </li>
               <li>
-                <Button className="w-full bg-green-600 hover:bg-green-700 mt-2 gap-2 cursor-pointer">
+                <Button className="w-full bg-green-600 hover:bg-green-700 mt-2 gap-2 cursor-pointer" onClick={() => window.open('https://wa.me/5545999657206', '_blank')}>
                   <FaWhatsapp className="w-8 h-8" /> Whatsapp
                 </Button>
               </li>
