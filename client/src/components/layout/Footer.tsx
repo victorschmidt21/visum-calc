@@ -106,14 +106,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
-                <span>(45) 99965-7206</span>
+                <span>(45) 99117-7803</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary shrink-0" />
                 <span>contato@visumcalc.com.br</span>
               </li>
               <li>
-                <Button className="w-full bg-green-600 hover:bg-green-700 mt-2 gap-2 cursor-pointer" onClick={() => window.open('https://wa.me/5545999657206', '_blank')}>
+                <Button className="w-full bg-green-600 hover:bg-green-700 mt-2 gap-2 cursor-pointer" onClick={() => window.open('https://wa.me/5545991177803', '_blank')}>
                   <FaWhatsapp className="w-8 h-8" /> Whatsapp
                 </Button>
               </li>
