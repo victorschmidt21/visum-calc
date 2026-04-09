@@ -41,7 +41,7 @@ export async function fetchLegisWebAgenda(mes: string | number, ano: string | nu
 
 export async function sendContactForm(data: any) {
   const response = await axios.post(
-    "https://n8n.voriumcompany.com.br/webhook/contact",
+    "https://n8n.taktico.com.br/webhook/contact",
     data
   );
   return response.data;
