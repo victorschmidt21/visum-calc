@@ -89,7 +89,7 @@ export default function Contact() {
              </p>
              <Button 
                 className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-12 gap-2 text-lg cursor-pointer"
-                onClick={() => window.open("https://wa.me/5545999657206", "_blank")}
+                onClick={() => window.open("https://wa.me/5545991177803", "_blank")}
              >
                 <FaWhatsapp className="w-6 h-6" /> Falar no WhatsApp
              </Button>
@@ -115,7 +115,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-primary text-lg">Telefone & WhatsApp</h4>
-                  <p className="text-gray-600 mt-1">(45) 99965-7206</p>
+                  <p className="text-gray-600 mt-1">(45) 99117-7803</p>
                   <p className="text-sm text-gray-500">Segunda a Sexta, 9h às 18h</p>
                 </div>
               </div>
