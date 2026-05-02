@@ -297,6 +297,7 @@ export default function ServiceDetail() {
         title={service.title}
         description={service.description}
         image={service.image}
+        canonicalUrl={`https://visumcalc.com.br/servicos/${id}`}
       />
       <Navbar />
 

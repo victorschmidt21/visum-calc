@@ -1,7 +1,7 @@
 import { Calculator, Mail, MapPin, Phone, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import logo from "../../../public/logo.png";
+const logo = "/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { scrollToSection } from "@/lib/utils";
 

@@ -17,6 +17,7 @@ export default function Home() {
       <MetaHead
         title="Precisão Contábil e Pericial"
         description="Na Visum Calc, unimos expertise contábil, jurídica e pericial para transformar complexidade em clareza."
+        canonicalUrl="https://visumcalc.com.br/"
       />
       <Navbar />
       <main>
