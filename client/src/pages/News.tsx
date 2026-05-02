@@ -72,9 +72,10 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-white">
-      <MetaHead 
-        title="Notícias e Agenda Tributária" 
+      <MetaHead
+        title="Notícias e Agenda Tributária"
         description="Fique por dentro das últimas notícias fiscais e da agenda tributária completa."
+        canonicalUrl="https://visumcalc.com.br/noticias"
       />
       <Navbar />
       <main className="pt-32 pb-20">
@@ -157,7 +158,7 @@ export default function News() {
                          </div>
                         <CardTitle className="text-lg line-clamp-2" title={item.titulo}>{item.titulo}</CardTitle>
                       </CardHeader>
-                      <CardContent className="flex-grow">
+                      <CardContent className="grow">
                         {/* Remove HTML tags from resumo if needed, assuming plain text or simple HTML */}
                         <div 
                             className="text-muted-foreground text-sm line-clamp-4"

@@ -10,8 +10,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import logo from "../../../public/logo.png";
-import logo2 from "../../../public/logo2.png";
+const logo = "/logo.png";
+const logo2 = "/logo2.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
