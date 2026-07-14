@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import {
@@ -282,10 +283,13 @@ export default function ServiceDetailClient({ id }: { id: string }) {
       <div className="bg-primary pt-40 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src={service.image}
             alt={service.title}
-            className="w-full h-full object-cover grayscale opacity-50"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover grayscale opacity-50"
           />
         </div>
         <div className="container mx-auto px-4 relative z-20">
@@ -309,11 +313,13 @@ export default function ServiceDetailClient({ id }: { id: string }) {
                 <h2 className="text-2xl font-bold text-primary mb-6 font-heading">
                   {service.subtitle}
                 </h2>
-                <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl bg-gray-100">
-                  <img
+                <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl bg-gray-100 relative">
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
