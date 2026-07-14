@@ -85,10 +85,18 @@ export default function HomeClient() {
                     Impactos Mapeados
                   </h4>
                   <ul className="space-y-3 text-sm text-gray-100">
-                    <li className="flex items-center gap-2">• Unificação de tributos federais e estaduais</li>
-                    <li className="flex items-center gap-2">• Revisão de regimes especiais no agro</li>
-                    <li className="flex items-center gap-2">• Novas obrigações acessórias</li>
-                    <li className="flex items-center gap-2">• Crédito financeiro instantâneo</li>
+                    <li className="flex items-center gap-2">
+                      • Unificação de tributos federais e estaduais
+                    </li>
+                    <li className="flex items-center gap-2">
+                      • Revisão de regimes especiais no agro
+                    </li>
+                    <li className="flex items-center gap-2">
+                      • Novas obrigações acessórias
+                    </li>
+                    <li className="flex items-center gap-2">
+                      • Crédito financeiro instantâneo
+                    </li>
                   </ul>
                 </div>
               </div>
